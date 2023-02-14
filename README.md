@@ -51,6 +51,7 @@ buat di matlab
 sesuaikan crocotools_param.m
 
 CROCO_title  = 'Budee_tide';
+
 CROCO_config = 'Budee_tide';
 
 lonmin =  117.0;   % Minimum longitude [degree east]
@@ -61,13 +62,16 @@ latmin = -9.6;   % Minimum latitude  [degree north]
 
 latmax = 7.32;   % Maximum latitude  [degree north]
 
-dl = 1/24; % ambil grid dari grid builder
+dl = 1/24;
 
 N = 50;
 
 theta_s    =  7.;
+
 theta_b    =  1.;
+
 hc         = 100.;
+
 vtransform =  2.; 
                   
 topo_smooth =  2; 

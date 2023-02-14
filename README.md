@@ -48,7 +48,7 @@ buat data forcing atmosfir , buat data forcing laut, buat data forcing pasang su
 
 buat di matlab
 
-sesuaikan crocotools_param.m
+1. sesuaikan crocotools_param.m
 
 CROCO_title  = 'Budee_tide';
 
@@ -98,25 +98,55 @@ interp_method = 'spline';
 
 makeplot     = 1;        
 
-- Pembuatan grid
+%
+Ymin          = 2017;          % first forcing year
 
-bisa langsung di make_grid di croco
+Ymax          = 2022;          % last  forcing year
 
-atau bisa buat di grid builder, copy file gridnya ke direntori CROCO_FILES
+Mmin          = 1;             % first forcing month
 
-masukan nama grid hasil grid builder di crocotools_param.m 
+Mmax          = 12;            % last  forcing month
 
-crvname  = [CROCO_files_dir,'grid_anszel_bali.nc'];
+dianalisa 2018-2022
 
-- buat forcing laut
+running 2017 januari - 2018 januari
+
+evaluasi 2018 januari (SST model Vs SST Ostia/GHRSST/modis/atau yang lain) 
+
+%
+
+2. Pembuatan grid
+
+make_grid  di komputernya made!!!
+
+sesuaikan masking land-sea
+
+3. buat forcing laut
 
 make_OGCM_mercator 
 
-- buat forcing atmosfir
+perhatikan di file download_mercator_python.m di direktori /home/yoga/CROCO/croco_tools/Oforc_OGCM
+
+download_raw_data=1;  0 = tidak download data 1= download data
+ 
+convert_raw2crocotools=1; % convert -> crocotools format data
+
+kalau terputus ulang lagi tapi sesuaikan tahun, bulan start dan end simulation
+
+file raw = berarti data download
+
+.cdf file yang sudah di convert
+
+jika setelah proses download selesai dan masuk ke proses convert raw data dan terjadi eror
+
+sesuaikan tanggal start end date, running lagi make_OGCM_mercator tapi download_raw_data=0
+
+
+4. buat forcing atmosfir
 
 cd /home/yoga/CROCO/croco_tools
 
-cd Aforc_ERA5_anszel
+cd Aforc_ERA5_made
 
 sesuaikan di era5_crocotools_param.py
 
@@ -138,6 +168,8 @@ make_ERA5
 
 - file output simulasi : 
 /mnt/disksdd2/CROCO_OUT/{nama_simulasi}
+
+# SAMPAI SINI DULU MADE
 
 # RUNNING
 

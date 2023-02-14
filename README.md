@@ -25,7 +25,7 @@ dilarang meletakkan data apapun di /home kecuali file program
 
 Siapkan nama simulasi. 
 
-nama_simulasi=Sulawesi_tide
+nama_simulasi=Budee_tide
 
 - file program ROMS:
 /home/yoga/CROCO/Simulation/{nama_simulasi}
@@ -38,6 +38,10 @@ rsync -av master/* {nama_simulasi}/
 
 matlab
 
+perhatikan untuk close semua windows di matlab!!!!
+
+klik start
+
 - Persiapan running 
 
 buat data forcing atmosfir , buat data forcing laut, buat data forcing pasang surut
@@ -45,6 +49,46 @@ buat data forcing atmosfir , buat data forcing laut, buat data forcing pasang su
 buat di matlab
 
 sesuaikan crocotools_param.m
+
+CROCO_title  = 'Budee_tide';
+CROCO_config = 'Budee_tide';
+
+lonmin =  117.0;   % Minimum longitude [degree east]
+lonmax = 135.6;   % Maximum longitude [degree east]
+latmin = -9.6;   % Minimum latitude  [degree north]
+latmax = 7.32;   % Maximum latitude  [degree north]
+
+dl = 1/24; % ambil grid dari grid builder
+
+N = 50;
+
+theta_s    =  7.;
+theta_b    =  1.;
+hc         = 100.;
+vtransform =  2.; % s-coordinate type (1: old- ; 2: new- coordinates)
+                  % ! take care to define NEW_S_COORD cpp-key in cppdefs.h 
+
+topo_smooth =  2; % 1: old ; 2: new filter (better but slower)
+
+hmin = 20;
+
+hmax_coast = 500;
+
+hmax = 7500; % cek kedalaman maksimum diwilayah model
+
+rtarget = 0.25;
+
+n_filter_deep_topo=4;
+
+n_filter_final=2;
+
+coastfileplot = 'coastline_f.mat';
+coastfilemask = 'coastline_f_mask.mat';
+Roa=0;
+
+interp_method = 'spline'; % Interpolation method: 'linear' or 'spline'
+
+makeplot     = 1;         % 1: create graphics after each preprocessing step
 
 - Pembuatan grid
 

@@ -54,8 +54,11 @@ CROCO_title  = 'Budee_tide';
 CROCO_config = 'Budee_tide';
 
 lonmin =  117.0;   % Minimum longitude [degree east]
+
 lonmax = 135.6;   % Maximum longitude [degree east]
+
 latmin = -9.6;   % Minimum latitude  [degree north]
+
 latmax = 7.32;   % Maximum latitude  [degree north]
 
 dl = 1/24; % ambil grid dari grid builder

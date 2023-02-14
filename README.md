@@ -68,10 +68,9 @@ N = 50;
 theta_s    =  7.;
 theta_b    =  1.;
 hc         = 100.;
-vtransform =  2.; % s-coordinate type (1: old- ; 2: new- coordinates)
-                  % ! take care to define NEW_S_COORD cpp-key in cppdefs.h 
-
-topo_smooth =  2; % 1: old ; 2: new filter (better but slower)
+vtransform =  2.; 
+                  
+topo_smooth =  2; 
 
 hmin = 20;
 
@@ -86,12 +85,14 @@ n_filter_deep_topo=4;
 n_filter_final=2;
 
 coastfileplot = 'coastline_f.mat';
+
 coastfilemask = 'coastline_f_mask.mat';
+
 Roa=0;
 
-interp_method = 'spline'; % Interpolation method: 'linear' or 'spline'
+interp_method = 'spline'; 
 
-makeplot     = 1;         % 1: create graphics after each preprocessing step
+makeplot     = 1;        
 
 - Pembuatan grid
 

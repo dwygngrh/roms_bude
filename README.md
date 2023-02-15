@@ -54,7 +54,7 @@ CROCO_title  = 'Budee_tide';
 
 CROCO_config = 'Budee_tide';
 
-lonmin =  117.0;   % Minimum longitude [degree east]
+lonmin =  117.1;   % Minimum longitude [degree east]
 
 lonmax = 135.6;   % Maximum longitude [degree east]
 
